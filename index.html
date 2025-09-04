@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bella's Egg Timer</title>
+
+    <!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer=""></script>
+
+    <!--/ /-------- Google Fonts --------/ /-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>Bella Egg Timer</p>
+    <h1>bella's egg timer</h1>
+
+    <button data-time="600">hard boiled</button>       <!-- 10 minutes -->
+    <button data-time="420">medium boiled</button>     <!-- 7 minutes -->
+    <button data-time="300">soft boiled</button>       <!-- 5 minutes -->
+    <button data-time="720">over boiled</button>       <!-- 12 minutes -->
+    <button data-time="240">sunny side up</button>     <!-- 4 minutes -->
+    <button data-time="180">over easy</button>         <!-- 3 minutes -->
+    <button data-time="240">over medium</button>       <!-- 4 minutes -->
+    <button data-time="300">over hard</button>         <!-- 5 minutes -->
+
+    <p id="message">select your desired egg to begin a timer</p>
+    <p id="timerDisplay"></p>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
