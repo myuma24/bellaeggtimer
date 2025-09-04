@@ -12,12 +12,27 @@ body {
 
 button {
     margin: 0.5em;
-    padding: 1em 2em;
+    padding: 1em 1.6em;
     font-size: 2em;
     cursor: pointer;
+    transition: all 120ms;
+}
+
+#timer {
+    display: none;
 }
 
 #timerDisplay {
     font-size: 2em;
     margin-top: 1em;
+}
+
+button:hover{
+    scale: 1.2;
+}
+
+#button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-rows: repeat(auto-fill, 1fr);
 }
