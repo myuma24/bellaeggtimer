@@ -118,7 +118,7 @@ async function animateMenuToTimer(setupFunc) {
       height: "100vh",
       top: "0px",
       left: "0px",
-      borderRadius: "0px",
+      // borderRadius: "0px",
     },
     egg: {
       transform: "rotateY(360deg) scale(1.2)",
@@ -319,37 +319,37 @@ async function animateTimerToMenu(setupFunc) {
 /** timer stuff */
 const specs = {
   "soft-boiled": {
-    time: 20,
+    time: 7 * 60,
     img: "images/boiling.gif",
     finish: "images/boiled_eggs.png",
     cookingSound: "boiling",
   },
   "medium-boiled": {
-    time: 5,
+    time: 8.5 * 60,
     img: "images/boiling.gif",
     finish: "images/boiled_eggs.png",
     cookingSound: "boiling",
   },
   "hard-boiled": {
-    time: 5,
+    time: 11 * 60,
     img: "images/boiling.gif",
     finish: "images/boiled_eggs.png",
     cookingSound: "boiling",
   },
   "sunny-side-up": {
-    time: 5,
+    time: 2.5 * 60,
     img: "images/pan_frying.gif",
     finish: "images/plated_egg.png",
     cookingSound: "sizzling",
   },
   "over-easy": {
-    time: 5,
+    time: 2.5 * 60,
     img: "images/pan_frying.gif",
     finish: "images/plated_egg.png",
     cookingSound: "sizzling",
   },
   "over-medium": {
-    time: 5,
+    time: 3.25 * 60,
     img: "images/pan_frying.gif",
     finish: "images/plated_egg.png",
     cookingSound: "sizzling",
@@ -390,7 +390,7 @@ async function startTimer(id) {
   cookingEggImg.src = img;
 
   timeMessage.textContent = formatTime(remainingTime);
-  timerHeader.textContent = `You're egg is cooking!`;
+  timerHeader.textContent = `Your egg is cooking!`;
   timerMessage.textContent = "Hang tight and listen to the alarm";
 
   const finishPromise = new Promise((resolve) => {
@@ -423,7 +423,7 @@ async function startTimer(id) {
   }
 
   cookingEggImg.src = finish;
-  timerHeader.textContent = `You're egg is ready!`;
+  timerHeader.textContent = `Your egg is ready!`;
   timeMessage.textContent = "Enjoy :P";
   timerMessage.style.display = "none";
 }

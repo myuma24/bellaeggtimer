@@ -23,50 +23,65 @@
     />
   </head>
   <body>
-    <span class="page-root" id="home-page" data-visible="true">
-      <h1>Bella's Egg Timer</h1>
-      <p>
-        What egg are we making <br />
-        today?
-      </p>
+    <div id="root">
+      <div class="window-bar">
+        <button class="window-button" id="dismiss">
+          <img src="images/dismiss.svg" />
+        </button>
 
-      <section id="selection">
-        <div class="button-grid">
-          <button class="egg-button" data-id="soft-boiled">
-            <img src="images/soft_boiled.png" alt="soft boiled egg" />
-            <p>Soft Boiled</p>
-          </button>
-          <button class="egg-button" data-id="medium-boiled">
-            <img src="images/medium_boiled.png" alt="medium boiled egg" />
-            <p>Medium Boiled</p>
-          </button>
-          <button class="egg-button" data-id="hard-boiled">
-            <img src="images/hardboiled.png" alt="hard boiled egg" />
-            <p>Hard Boiled</p>
-          </button>
-          <button class="egg-button" data-id="sunny-side-up">
-            <img src="images/sunny_egg.png" alt="sunny side up egg" />
-            <p>Sunny Side Up</p>
-          </button>
-          <button class="egg-button" data-id="over-easy">
-            <img src="images/over_easy.png" alt="over easy egg" />
-            <p>Over Easy</p>
-          </button>
-          <button class="egg-button" data-id="over-medium">
-            <img src="images/over_hard.png" alt="over hard egg" />
-            <p>Over Hard</p>
-          </button>
-        </div>
-      </section>
-    </span>
+        <button class="window-button" id="maximize">
+          <img src="images/maximize.svg" />
+        </button>
 
-    <span class="page-root" id="timer-page" data-visible="false">
-      <h1 id="timer-header">TIMER HEADER</h1>
-      <p id="timer-message">TIMER MESSAGE</p>
-      <img src="images/plated_egg.png" id="cooking-egg" />
-      <p id="time-message">TIME MESSAGE</p>
-      <button id="back-button"><img src="images/back.png"/></button>
-    </span>
+        <button class="window-button" id="close">
+          <img src="images/close.svg" />
+        </button>
+      </div>
+      <span class="page-root" id="home-page" data-visible="true">
+        <h1>Bella's Egg Timer</h1>
+        <p>
+          What egg are we making <br />
+          today?
+        </p>
+
+        <section id="selection">
+          <div class="button-grid">
+            <button class="egg-button" data-id="soft-boiled">
+              <img src="images/soft_boiled.png" alt="soft boiled egg" />
+              <p>Soft Boiled</p>
+            </button>
+            <button class="egg-button" data-id="medium-boiled">
+              <img src="images/medium_boiled.png" alt="medium boiled egg" />
+              <p>Medium Boiled</p>
+            </button>
+            <button class="egg-button" data-id="hard-boiled">
+              <img src="images/hardboiled.png" alt="hard boiled egg" />
+              <p>Hard Boiled</p>
+            </button>
+            <button class="egg-button" data-id="sunny-side-up">
+              <img src="images/sunny_egg.png" alt="sunny side up egg" />
+              <p>Sunny Side Up</p>
+            </button>
+            <button class="egg-button" data-id="over-easy">
+              <img src="images/over_easy.png" alt="over easy egg" />
+              <p>Over Easy</p>
+            </button>
+            <button class="egg-button" data-id="over-medium">
+              <img src="images/over_hard.png" alt="over hard egg" />
+              <p>Over Hard</p>
+            </button>
+          </div>
+        </section>
+      </span>
+
+      <span class="page-root" id="timer-page" data-visible="false">
+        <h1 id="timer-header">TIMER HEADER</h1>
+        <p id="timer-message">TIMER MESSAGE</p>
+        <img src="images/plated_egg.png" id="cooking-egg" />
+        <p id="time-message">TIME MESSAGE</p>
+        <button id="back-button"><img src="images/back.png" /></button>
+      </span>
+    </div>
 
     <div id="animated-background"></div>
     <img id="animated-egg" />
@@ -89,5 +104,6 @@
     <script src="confetti.js"></script>
     <script src="sounds.js"></script>
     <script src="script.js"></script>
+    <script src="window.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 "use strict";
 
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 
 const electronReload = require("electron-reload");
 electronReload(__dirname);
@@ -8,10 +8,49 @@ electronReload(__dirname);
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 900,
-    height: 820,
+    height: 720,
+    minWidth: 750,
+    minHeight: 700,
+    frame: false,
+    transparent: true,
+    webPreferences: {
+      preload: __dirname + "/files/preload.js",
+    },
   });
 
   win.loadFile("files/index.html");
+
+  ipcMain.on("minimize-window", () => {
+    if (win) {
+      win.minimize();
+    }
+  });
+
+  ipcMain.on("maximize-window", () => {
+    if (win.isMaximized()) {
+      win.unmaximize();
+    } else {
+      win.maximize();
+    }
+  });
+
+  ipcMain.on("close-window", () => {
+    if (win) {
+      win.close();
+    }
+  });
+
+  // Listen for the 'maximize' event
+  win.on("maximize", () => {
+    // Send a message to the renderer with the new state
+    win.webContents.send("window-state-changed", "maximized");
+  });
+
+  // Listen for the 'unmaximize' event
+  win.on("unmaximize", () => {
+    // Send a message to the renderer with the new state
+    win.webContents.send("window-state-changed", "unmaximized");
+  });
 };
 
 app.whenReady().then(() => {
