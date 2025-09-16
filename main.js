@@ -2,8 +2,9 @@
 
 const { app, BrowserWindow, ipcMain } = require("electron");
 
-const electronReload = require("electron-reload");
-electronReload(__dirname);
+// console.log(process.env.ELECTRON_IS_DEV);
+// const electronReload = require("electron-reload");
+// electronReload(__dirname);
 
 const createWindow = () => {
   const win = new BrowserWindow({
