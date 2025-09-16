@@ -7,16 +7,62 @@ body {
     font-family: "Just Me Again Down Here", cursive;
     text-align: center;
     padding: 2em;
-    margin: 0 25% 0 25%;
+    /* margin: 0 25% 0 25%; */
 }
 
-button {
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: fit-content;
+    gap: 32px;
+    margin: 0 auto;
+}
+
+.egg-button {
+    background: #FCD95B;
+    border: none;
+    border-radius: 36px;
+    padding: 40px;
+}
+
+.egg-button > img {
+    width: 140px;
+    height: 140px;
+
+}
+
+@keyframes animateBackground {
+
+}
+
+@keyframes animateEgg {
+
+}
+
+#animated-background {
+    position: fixed;
+    background: #FCD95B;
+    border-radius: 32px;
+    /* background: pink; */
+
+    transition: all 400ms;
+}
+
+#animated-egg {
+    position: fixed;
+    /* background: red; */
+    
+    transition: all 400ms;
+}
+
+
+/* button {
     margin: 0.5em;
     padding: 1em 1.6em;
     font-size: 2em;
     cursor: pointer;
     transition: all 120ms;
-}
+} */
 
 #timer {
     display: none;
@@ -27,9 +73,9 @@ button {
     margin-top: 1em;
 }
 
-button:hover{
+/* button:hover{
     scale: 1.2;
-}
+} */
 
 #button-grid {
     display: grid;
