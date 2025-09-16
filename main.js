@@ -7,8 +7,8 @@ electronReload(__dirname);
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 820,
   });
 
   win.loadFile("files/index.html");
