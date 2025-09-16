@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bella's Egg Timer</title>
 
     <!--/ /-------- Normalize CSS --------/ /-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer=""></script>
 
     <!--/ /-------- Google Fonts --------/ /-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <span class="page-root" id="home-page" data-visible="true">
+      <h1>Bella's Egg Timer</h1>
+      <p>
+        What egg are we making <br />
+        today?
+      </p>
 
-</head>
-<body>
-    <h1>bella's egg timer</h1>
-    <section id="timer">
-        <p id="timer-message"></p>
-        <p id="timerDisplay"></p>
-    </section>
-
-    <section id = "selection">
+      <section id="selection">
         <div class="button-grid">
-            <button class="egg-button">
-             <img src = "images/soft_boiled.png" alt = "soft boiled egg">
-            </button>
-            <button class="egg-button">
-                <img src = "images/soft_boiled.png" alt = "soft boiled egg">
-               </button>
-            <button class="egg-button">
-                <img src = "images/soft_boiled.png" alt = "soft boiled egg">
-            </button>
-            <button class="egg-button">
-                <img src = "images/soft_boiled.png" alt = "soft boiled egg">
-            </button>
+          <button class="egg-button" data-id="soft-boiled">
+            <img src="images/soft_boiled.png" alt="soft boiled egg" />
+            <p>Soft Boiled</p>
+          </button>
+          <button class="egg-button" data-id="medium-boiled">
+            <img src="images/medium_boiled.png" alt="medium boiled egg" />
+            <p>Medium Boiled</p>
+          </button>
+          <button class="egg-button" data-id="hard-boiled">
+            <img src="images/hardboiled.png" alt="hard boiled egg" />
+            <p>Hard Boiled</p>
+          </button>
+          <button class="egg-button" data-id="sunny-side-up">
+            <img src="images/sunny_egg.png" alt="sunny side up egg" />
+            <p>Sunny Side Up</p>
+          </button>
+          <button class="egg-button" data-id="over-easy">
+            <img src="images/over_easy.png" alt="over easy egg" />
+            <p>Over Easy</p>
+          </button>
+          <button class="egg-button" data-id="over-medium">
+            <img src="images/over_hard.png" alt="over hard egg" />
+            <p>Over Hard</p>
+          </button>
         </div>
-    </section>
+      </section>
+    </span>
 
-    <div id="animated-background">
-    </div>
-    <img id="animated-egg"/>
+    <span class="page-root" id="timer-page" data-visible="false">
+      <h1 id="timer-header">TIMER HEADER</h1>
+      <p id="timer-message">TIMER MESSAGE</p>
+      <img src="images/plated_egg.png" id="cooking-egg" />
+      <p id="time-message">TIME MESSAGE</p>
+    </span>
 
+    <div id="animated-background"></div>
+    <img id="animated-egg" />
 
-<!--     <section id="main">
+    <!--     <section id="main">
         <p id="message">select your desired egg to begin a timer</p>
 
         <div id="button-grid">
@@ -61,10 +85,6 @@
         </div>
     </section> -->
 
-
-
-
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
