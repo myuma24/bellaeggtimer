@@ -17,7 +17,23 @@ const sounds = {
   ding: {
     src: "sounds/ding.mp3",
     volume: 1,
-  }
+  },
+  bellascream: {
+    src: "sounds/bellascream.mp3",
+    volume: 1,
+  },
+  bellaegg: {
+    src: "sounds/bellaegg.mp3",
+    volume: 1,
+  },
+  samscream: {
+    src: "sounds/samscream.mp3",
+    volume: 1,
+  },
+  samegg: {
+    src: "sounds/samegg.mp3",
+    volume: 1,
+  },
 };
 
 function playSound(audioName) {

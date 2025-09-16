@@ -74,6 +74,8 @@ function applyStyles(el, styles) {
 }
 
 async function animateMenuToTimer(setupFunc) {
+  document.body.style.pointerEvents = "none";
+
   // generate steps
   const preStyles = {
     background: {
@@ -184,9 +186,13 @@ async function animateMenuToTimer(setupFunc) {
 
   applyStyles(animatedBackground, resetStyles.background);
   applyStyles(animatedEgg, resetStyles.egg);
+
+  document.body.style.pointerEvents = "auto";
 }
 
 async function animateTimerToMenu(setupFunc) {
+  document.body.style.pointerEvents = "none";
+  
   const duration = 800;
   const delay = 400;
 
@@ -306,6 +312,8 @@ async function animateTimerToMenu(setupFunc) {
 
   applyStyles(animatedBackground, resetStyles.background);
   applyStyles(animatedEgg, resetStyles.egg);
+  
+  document.body.style.pointerEvents = "auto";
 }
 
 /** timer stuff */
@@ -404,7 +412,15 @@ async function startTimer(id) {
 
   looper.stop();
   doConfetti();
+
   playSound("ding");
+  
+  // playSound("bellascream");
+  if (Math.random() < 0.8) {
+    const sounds = ["samscream", "bellascream", "bellaegg"];
+    const selectedSound = sounds[Math.floor(Math.random() * sounds.length)];
+    playSound(selectedSound);
+  }
 
   cookingEggImg.src = finish;
   timerHeader.textContent = `You're egg is ready!`;
